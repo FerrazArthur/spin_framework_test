@@ -1,0 +1,32 @@
+spin_manifest_version = "1"
+authors = ["Arthur Ferraz <arthursnc@gmail.com>"]
+description = "hello world from wasm!"
+name = "hello"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "hello"
+source = "hello/hello.wasm"
+allowed_http_hosts = []
+
+[component.trigger]
+route = "/..."
+executor = { type = "wagi" }
+
+[component.build]
+workdir = "hello"
+command = "wasmsdk hello.c -o hello.wasm"
+watch = ["*.c"]
+
+[[component]]
+id = "echo"
+source = "echo/target/echo.wasm"
+
+[component.trigger]
+route = "/echo"
+
+[component.build]
+command = "npm run build"
+workdir = "echo"
+watch = ["src/**/*.js", "echo/package.json"]

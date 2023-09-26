@@ -1,0 +1,19 @@
+
+
+stages:
+  - build
+  - test
+
+job_build:
+  stage: build
+  image: alpine
+  variables: 
+    HELLO: "world"
+  script:
+    - echo "Building $HELLO the app"
+
+job_test:
+  stage: test
+  image: alpine
+  script:
+    - echo "Running tests"
