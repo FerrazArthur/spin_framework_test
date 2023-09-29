@@ -1,0 +1,9 @@
+FROM scratch
+
+COPY ./spin.toml /spin.toml
+
+COPY ./hello/hello.wasm /hello/hello.wasm
+
+COPY ./echo/target/echo.wasm /echo/target/echo.wasm
+
+CMD ["/"]
