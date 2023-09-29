@@ -20,3 +20,23 @@ Docker Desktop downloads and installs the following runtimes that you can use to
 - io.containerd.spin.v1
 - io.containerd.wasmedge.v1
 - io.containerd.wasmtime.v1
+
+## Run
+
+### Run spin server
+
+To run spin container, use the following command  
+
+```docker container run --rm -p 3000:80 --name=spin_server_example --runtime=io.containerd.spin.v1 --platform=wasi/wasm32 registry.quant1.com.br/arthur/wasm-tests/spin-example```
+
+In order to test it:  
+```curl http://localhost:3000```
+
+And also:  
+```curl -d "echo this: hello wasm!" htpp://localhost:3000/echo```
+
+### Run wasm simple test
+
+To run wasm hello-world, use the following command  
+
+```docker container run --rm --name=hello_wasm_example --runtime=io.containerd.wasmedge.v1 --platform=wasi/wasm registry.quant1.com.br/arthur/wasm-tests/hello-wasm```
