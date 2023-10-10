@@ -10,3 +10,4 @@ upload_files:
       - $CI_PROJECT_DIR/my-artifacts.tar.gz  # Define the artifact to be passed to the next stage
   only:
     - master  # Trigger this job only on the master branch or any other branch as needed
+    
