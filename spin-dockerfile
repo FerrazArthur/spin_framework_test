@@ -1,6 +1,6 @@
 FROM scratch
 
-COPY ./spin.toml /spin.toml
+COPY ./spin.toml /
 
 COPY ./hello/hello.wasm /hello/hello.wasm
 

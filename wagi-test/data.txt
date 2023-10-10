@@ -1,0 +1,2 @@
+Insira essa linha no arquivo data.txt por favor.
+Insira também essa outra, obrigado.

@@ -11,7 +11,7 @@ source = "hello/hello.wasm"
 allowed_http_hosts = []
 
 [component.trigger]
-route = "/..."
+route = "/hello"
 executor = { type = "wagi" }
 
 [component.build]
