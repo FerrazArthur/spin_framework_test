@@ -4,10 +4,11 @@ upload_files:
     - echo "Uploading scripts and files to the GitLab Package Registry"
     - mkdir -p $CI_PROJECT_DIR/artifacts  # Create a directory for artifacts
     - cp -r $CI_PROJECT_DIR/spin_container/* $CI_PROJECT_DIR/artifacts/  # Copy the contents of spin_container to the artifacts directory
-    - tar czvf $CI_PROJECT_DIR/my-artifacts.tar.gz -C $CI_PROJECT_DIR artifacts/  # Create a tar.gz archive of the artifacts directory
+    - tar czvf $CI_PROJECT_DIR/spin_installation_scripts.tar.gz -C $CI_PROJECT_DIR artifacts/  # Create a tar.gz archive of the artifacts directory
+    - du -h $CI_PROJECT_DIR/spin_installation_scripts.tar.gz  # Display the size of the archive
   artifacts:
     paths:
-      - $CI_PROJECT_DIR/my-artifacts.tar.gz  # Define the artifact to be passed to the next stage
+      - $CI_PROJECT_DIR/spin_installation_scripts.tar.gz  # Define the artifact to be passed to the next stage
   only:
     - main  # Trigger this job only on the main branch or any other branch as needed
     
