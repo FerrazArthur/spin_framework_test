@@ -1,5 +1,5 @@
 upload_files:
-  stage: package
+  stage: deploy
   script:
     - echo "Uploading scripts and files to the GitLab Package Registry"
     - mkdir -p $CI_PROJECT_DIR/artifacts  # Create a directory for artifacts
