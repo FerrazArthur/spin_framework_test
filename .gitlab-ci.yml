@@ -5,9 +5,9 @@ docker-build:
   services:
     - docker:dind
   variables:
+    CUSTOM_TAG: test 
     DOCKER_IMAGE_NAME: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG-$CUSTOM_TAG
   before_script:
-    - CUSTOM_TAG=${CUSTOM_TAG:-$(git rev-parse --short HEAD)}
     - export CUSTOM_TAG
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   # All branches are tagged with $DOCKER_IMAGE_NAME (defaults to commit ref slug)
