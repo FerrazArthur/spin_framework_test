@@ -25,4 +25,4 @@ docker-build:
     - if: $CI_COMMIT_BRANCH
       exists:
         - Dockerfile
-    - only: manual  # Add this line to make the job only manual
+    - when: manual  # Add this line to make the job only manual
