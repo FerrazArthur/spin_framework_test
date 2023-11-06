@@ -14,19 +14,9 @@ allowed_http_hosts = []
 route = "/hello"
 executor = { type = "wagi" }
 
-[component.build]
-workdir = "hello"
-command = "wasmsdk hello.c -o hello.wasm"
-watch = ["*.c"]
-
 [[component]]
 id = "echo"
 source = "echo/target/echo.wasm"
 
 [component.trigger]
 route = "/echo"
-
-[component.build]
-command = "npm run build"
-workdir = "echo"
-watch = ["src/**/*.js", "echo/package.json"]

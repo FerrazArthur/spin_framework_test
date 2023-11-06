@@ -1,0 +1,11 @@
+FROM scratch
+
+COPY spin.toml /
+
+COPY hello/hello.wasm /hello/hello.wasm
+
+COPY echo/target/echo.wasm /echo/target/echo.wasm
+
+COPY spin.toml /log/spin.toml
+
+ENTRYPOINT ["/spin.toml"]
