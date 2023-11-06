@@ -1,4 +1,4 @@
-# wasm-tests
+# spin-tests
 
 ## Configuration
 
