@@ -73,7 +73,7 @@ Then you want to restart docker.service.
 
 To run a spin container, use the following command
 
-```docker container run --name=spin-example -p 3000:80 -v ./volume-log:/log -i --runtime io.containerd.spin.v1 registry.quant1.com.br/arthur/spin-tests:test up --log-dir /log```
+```docker container run --name=spin-example -p 3000:80 -v ./volume-log:/log -i --runtime io.containerd.spin.v1 registry.quant1.com.br/arthur/spin-tests:main-test up --log-dir /log```
 
 In order to test it:  
 ```curl http://localhost:3000/hello```

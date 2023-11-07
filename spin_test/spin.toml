@@ -8,7 +8,6 @@ version = "0.1.0"
 [[component]]
 id = "hello"
 source = "hello/hello.wasm"
-allowed_http_hosts = []
 
 [component.trigger]
 route = "/hello"
@@ -20,3 +19,4 @@ source = "echo/target/echo.wasm"
 
 [component.trigger]
 route = "/echo"
+
