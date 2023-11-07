@@ -13,7 +13,9 @@ docker-build:
   # All branches are tagged with $DOCKER_IMAGE_NAME (defaults to commit ref slug)
   # Default branch is also tagged with `latest`
   script:
-    - docker buildx build --pull --platform wasi/wasm32 -t "$DOCKER_IMAGE_NAME" .
+    - apk add tree
+    - tree -L 3
+    - docker buildx build --pull -t "$DOCKER_IMAGE_NAME" .
     - docker push "$DOCKER_IMAGE_NAME"
     - |
       if [[ "$CI_COMMIT_BRANCH" == "$CI_DEFAULT_BRANCH" ]]; then
