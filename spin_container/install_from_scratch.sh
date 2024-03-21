@@ -29,6 +29,8 @@ fi
 
 echo "Instalando shims:"
 
+echo "(Baixe as shims manualmente primeiro.)"
+
 ./install_shims.sh
 
 return_code=$?
