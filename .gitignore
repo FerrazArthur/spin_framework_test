@@ -1,4 +1,3 @@
 .spin
 volume-log/*
-spin_containers/shims/*
-spin_installation_scripts.tar.gz
+spin_container/shims/*
